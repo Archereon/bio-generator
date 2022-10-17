@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<!--
+	Indivisible by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
+-->
+<html>
+	<head>
+		<title>Fantasy Bio Generator</title>
+		<meta name="description" content="Creates a random fantasy bio following the structure of OK! RPG" />
+		<meta name="keywords" content="okrpg" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>
+		function submitToAPI(e) {
+			   e.preventDefault();
+			   var URL = "https://67rqb2izl8.execute-api.us-west-2.amazonaws.com/prod";
+
+			   var name = $("#character-bio").val();
+
+			   $.ajax({
+				 type: "GET",
+				 url : "https://67rqb2izl8.execute-api.us-west-2.amazonaws.com/prod",
+				 dataType: "json",				 
+				 success: function (data) {
+				   // clear form and show a success message
+				   $("#character-bio").html(data);
+				 },
+				 error: function (data) {
+				   // show an error message
+				   $("#character-bio").html(data);
+				 }});
+     }
+	 </script>
+	</head>
+	<body class="is-preload-0 is-preload-1">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Home -->
+					<article id="home" class="panel special">
+
+						<div class="content">
+							<div class="inner">
+								<form method="post" action="#" id="contact-form">
+									<div class="fields">
+										<div class="field">
+											<label for="name">Character Bio</label>
+											<div id = "character-bio">
+												
+											</div>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><a href="" class="button submit" onClick="submitToAPI(event)">Make me a Bio!</a></li>
+									</ul>
+								</form>
+							</div>
+						</div>
+					</article>
+					<footer id='footer'>
+					  <p class='copyright'>Character Bios generated for OK RPG!</p>
+					  <p class='copyright'><a href="https://www.okrpg.cc/">https://www.okrpg.cc/</a></p>
+					</footer>
+
+			</div>
+  
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		
+	</body>
+</html>
