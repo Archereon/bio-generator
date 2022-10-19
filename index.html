@@ -277,7 +277,7 @@ strength_list = ['my immense strength',
                  'my trusty blowpipe',
                  'my martial arts training',
                  'my magical shield',
-                 'my assassination skilss',
+                 'my assassination skills',
                  'I can magically control plants and trees',
                  'the bond I share with a magical beast',
                  'my experience in battle',
@@ -338,11 +338,11 @@ talent_list= ['that I can fly short distances',
               'my ability to control the earth beneath me',
               'my skills with my trusty pistol',
               'that I can magically conjure slick or sticky substances',
-              'that I can occassionally turn into an etheral ghost',
+              'that I can occasionally turn into an ethereal ghost',
               'that I can turn into any animal',
               'that I can fly',
               'that I have enhanced senses',
-              'that I can occassionally teleport myself and others to safety',
+              'that I can occasionally teleport myself and others to safety',
               'that I have a spy network in most cities',
               'that I can move objects with my mind',
               'that I am extremely rich',
@@ -415,7 +415,7 @@ flaw_list= ['I am addicted',
             'my frequent bouts of narcolepsy',
             'I am terrified of fire'];
 
-belief_list= ['anyone can be redemed',
+belief_list= ['anyone can be redeemed',
               'freedom is the most important thing in this world',
               'friendship is the most important thing in this world',
               'all traditions are useful should be honored',
@@ -499,16 +499,16 @@ goal_list= ['find true love',
             'remember those that have been forgotten',
             'stave off boredom'];
 
-        background = background_list[Math.floor(Math.random() * background_list.length)];
-        location = location_list[Math.floor(Math.random() * location_list.length)];
-        personality = personality_list[Math.floor(Math.random() * personality_list.length)];
-        strength = strength_list[Math.floor(Math.random() * strength_list.length)];
-        talent = talent_list[Math.floor(Math.random() * talent_list.length)];
-        flaw = flaw_list[Math.floor(Math.random() * flaw_list.length)];
-        belief = belief_list[Math.floor(Math.random() * belief_list.length)];
-        goal = goal_list[Math.floor(Math.random() * goal_list.length)];
+        var background = background_list[Math.floor(Math.random() * background_list.length)];
+        var location = location_list[Math.floor(Math.random() * location_list.length)];
+        var personality = personality_list[Math.floor(Math.random() * personality_list.length)];
+        var strength = strength_list[Math.floor(Math.random() * strength_list.length)];
+        var talent = talent_list[Math.floor(Math.random() * talent_list.length)];
+        var flaw = flaw_list[Math.floor(Math.random() * flaw_list.length)];
+        var belief = belief_list[Math.floor(Math.random() * belief_list.length)];
+        var goal = goal_list[Math.floor(Math.random() * goal_list.length)];
 
-        character_bio = "I am ${background} from ${location}. To others, I seem ${personality}.  My greatest strength is ${strength}.  My hidden talent is ${talent}.  My worst flaw is ${flaw}.  I believe that ${belief}.  My goal is to ${goal}.";
+        var character_bio = "I am " + background + " from " + location + ". To others, I seem " + personality + ".  My greatest strength is " + strength +" .  My hidden talent is " + talent + ".  My worst flaw is " + flaw + ".  I believe that " + belief + ".  My goal is to" + goal + ".";
 
         document.getElementById("character-bio").innerHTML = character_bio;
      }
@@ -535,7 +535,7 @@ goal_list= ['find true love',
 										</div>
 									</div>
 									<ul class="actions">
-										<li><a href="" class="button submit" onClick="submitToAPI(event)">Make me a Bio!</a></li>
+										<li><a class="button submit" onClick="submitToAPI(event)">Make me a Bio!</a></li>
 									</ul>
 								</form>
 							</div>
